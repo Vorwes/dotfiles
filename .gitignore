@@ -1,0 +1,43 @@
+# Opt in only the configs intended for publishing. Other application folders
+# can contain credentials, caches, history, and machine-local state.
+/*
+!/.gitignore
+!/README.md
+!/install.ps1
+!/wezterm/
+!/nushell/
+!/zoxide/
+
+/nushell/*
+!/nushell/config.nu
+!/nushell/env.nu
+!/nushell/scripts/
+!/nushell/autoload/
+/zoxide/*
+!/zoxide/.zoxide.nu
+
+# Neovim is intentionally an independent repository, not a nested gitlink.
+/nvim/
+
+# Never publish local overrides, credentials or runtime state.
+**/.env
+**/.env.*
+**/*secret*
+**/*credentials*
+**/*.bak
+**/*.log
+**/history*
+**/plugin.msgpackz
+**/config.local.nu
+**/*.local.nu
+**/*.local.lua
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.sqlite*
+**/*.db
+**/*.backup
+**/*.log.*
+**/id_rsa*
+**/id_ed25519*
